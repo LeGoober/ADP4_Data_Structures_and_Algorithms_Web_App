@@ -9,7 +9,7 @@ Recursion, sorting and searching, linked lists, stacks, queues, binary search tr
 | I want to… | Do this |
 |---|---|
 | **Open the desktop app** (Java 21+ installed) | Double-click [`dist/DSA-Visualiser.jar`](dist/DSA-Visualiser.jar), or double-click [`dist/Run-DSA-Visualiser.bat`](dist/Run-DSA-Visualiser.bat) (it tells you if Java is missing) |
-| **Use it with no Java at all** | Open the web version: **`<add your Vercel link here>`**. To try it offline, open a terminal in [`web/`](web/) and run `python -m http.server 5173`, then browse to <http://localhost:5173> |
+| **Use it with no Java at all** | Open the web version: **[`<ADP Assignment Web App`](https://adp4datastructuresandalgorithmsweba.vercel.app/)**. To try it offline, open a terminal in [`web/`](web/) and run `python -m http.server 5173`, then browse to <http://localhost:5173> |
 | **Run from a terminal** | `java -jar dist/DSA-Visualiser.jar` |
 | **Build and run from source** | `mvn spring-boot:run` (JDK 21 and Maven, or use the bundled `mvnw`) |
 | **Run all tests** | `mvn test` (114 JUnit tests) |
@@ -96,18 +96,3 @@ dist/               the runnable JAR and the Windows launcher
 - [`web/js/algorithms.js`](web/js/algorithms.js) is a line-by-line port of the Java algorithms (same names, same listener design, same results).
 - [`web/js/app.js`](web/js/app.js) holds the nine demo panels.
 - Check the port with `node --test web/test/algorithms.test.mjs`.
-
-### Deploy to Vercel
-
-Vercel hosts static sites, so the web version is deployed on its own.
-
-1. Push the project to GitHub, then in Vercel choose **Add New → Project** and import the repository.
-2. Set **Root Directory** to `web`, **Framework Preset** to *Other*, and leave Build Command and Output Directory empty.
-3. Click **Deploy**, then paste the link into the table at the top of this file.
-
-Or from a terminal:
-
-```bash
-cd web
-npx vercel --prod
-```

@@ -48,6 +48,9 @@ test('data structures', () => {
   q.enqueue(1); q.enqueue(2); q.enqueue(3); q.dequeue(); q.dequeue(); q.enqueue(4); q.enqueue(5);
   assert.deepEqual([q.dequeue(), q.dequeue(), q.dequeue()], [3, 4, 5]);
   assert.throws(() => q.dequeue());
+  // empty slots must be real entries, so the UI's items.map() draws every slot
+  assert.equal(new A.CircularQueue(8).items.map(() => 1).length, 8);
+  assert.equal(Object.keys(new A.CircularQueue(8).items).length, 8);
   const bank = new A.BankSimulation(5, 0.9, 7);
   for (let i = 0; i < 200; i++) bank.tick();
   assert.ok(bank.served > 0);

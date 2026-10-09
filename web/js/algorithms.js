@@ -234,7 +234,7 @@ export class SinglyLinkedList {
 }
 
 export class ArrayStack {
-  constructor(capacity) { this.items = new Array(capacity); this.top = 0; }
+  constructor(capacity) { this.items = new Array(capacity).fill(undefined); this.top = 0; }
   push(item) { if (this.top === this.items.length) throw new Error('Stack is full'); this.items[this.top++] = item; }
   pop() { if (!this.top) throw new Error('Stack is empty'); const v = this.items[--this.top]; this.items[this.top] = undefined; return v; }
   peek() { if (!this.top) throw new Error('Stack is empty'); return this.items[this.top - 1]; }
@@ -243,7 +243,8 @@ export class ArrayStack {
 }
 
 export class CircularQueue {
-  constructor(capacity) { this.items = new Array(capacity); this.front = 0; this.rear = 0; this.count = 0; }
+  // fill() so empty slots are real `undefined` values, not holes that map() would skip
+  constructor(capacity) { this.items = new Array(capacity).fill(undefined); this.front = 0; this.rear = 0; this.count = 0; }
   get capacity() { return this.items.length; }
   enqueue(item) {
     if (this.count === this.items.length) throw new Error('Queue is full');
