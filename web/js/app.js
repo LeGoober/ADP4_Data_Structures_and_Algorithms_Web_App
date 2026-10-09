@@ -343,7 +343,7 @@ panel('graph', 'E · Graph', (root, cleanup) => {
     reset(); const p = A.shortestPath(g, Number(from.value), Number(to.value));
     p.forEach((v, i) => { pathNodes.add(v); if (i) pathEdges.add(ek(p[i - 1], v)); });
     msg.textContent = p.length ? `Fewest edges: ${p.length - 1}` : 'No route.'; order.textContent = '';
-    out.replaceChildren(p.map((v, i) => [i ? h('span', { class: 'arrow' }, ' → ') : null, h('span', { class: 'chip' }, g.names[v])]));
+    out.replaceChildren(...p.flatMap((v, i) => [i ? h('span', { class: 'arrow' }, ' → ') : null, h('span', { class: 'chip' }, g.names[v])]).filter(Boolean));
     render();
   };
   const traverse = (kind) => () => {
