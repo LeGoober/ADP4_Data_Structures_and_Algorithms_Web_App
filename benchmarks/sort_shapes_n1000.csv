@@ -1,0 +1,10 @@
+input,algorithm,mean_ns,comparisons,swaps
+random,Selection Sort,448644.0,499500,987
+random,Quick Sort,95691.0,11755,5928
+random,Heap Sort,54227.0,16867,9089
+sorted,Selection Sort,370548.0,499500,0
+sorted,Quick Sort,50695.0,10562,988
+sorted,Heap Sort,56708.0,17583,9708
+reversed,Selection Sort,487280.0,499500,500
+reversed,Quick Sort,67809.0,10120,4066
+reversed,Heap Sort,35840.0,15965,8316

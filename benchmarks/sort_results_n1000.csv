@@ -1,0 +1,4 @@
+algorithm,mean_ns,stddev_ns,best_ns,comparisons,swaps
+Selection Sort,344755.0,63595.7,285400,499500,987
+Quick Sort,93811.3,45810.1,69700,11433,5987
+Heap Sort,122260.5,69446.4,66400,16867,9089
